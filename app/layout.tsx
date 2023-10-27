@@ -1,6 +1,7 @@
-import type { ReactNode } from "react";
-import Link from 'next/link';
+import type { ReactNode } from 'react';
 import './global.css';
+import NavBar from '@/app/components/NavBar';
+import { exo2,orbitron } from '@/app/fonts';
 
 type LayoutProps = {
     children: ReactNode;
@@ -8,28 +9,20 @@ type LayoutProps = {
 
 export default function RootLayout({ children }: LayoutProps) {
     return (
-        <html lang="en">
-            <body className="flex flex-col px-8 py-4 min-h-screen">
+        <html lang="en" className={`${exo2.variable} ${orbitron.variable}`}>
+            <body className="bg-orange-100 flex flex-col px-8 py-4 min-h-screen">
                 <header>
-                    <nav>
-                        <ul className="flex gap-2">
-                            <li>
-                                <Link href="/">Home</Link>
-                            </li>
-                            <li>
-                                <Link href="/reviews">Reviews</Link>
-                            </li>
-                            <li>
-                                <Link href="/about">About</Link>
-                            </li>
-                        </ul>
-                    </nav>
+                    <NavBar/>
                 </header>
                 <main className="grow py-3">
                     {children}
                 </main>
-                <footer className="border-t py-3 text-center text-xs">
-                    Game data and images  courtesy of <a href="https://rawg.io/" target="_blank">RAWG</a>
+                <footer className="border-t py-3 text-center text-slate-500 text-xs">
+                    Game data and images  courtesy of{' '}
+                    <a href="https://rawg.io/" target="_blank" 
+                        className='text-orange-800 hover:underline'>
+                        RAWG
+                    </a>
                 </footer>
             </body>
         </html>
