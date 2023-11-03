@@ -1,6 +1,6 @@
 ---
 title: "Hellblade"
-date: "2023-10-27"
+date: "2023-10-28"
 image: "/images/hellblade.jpg"
 ---
 
